@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Right Time Studio Funnel & Website Strategy</title>
+  <style>
+    :root {
+      --brand: #6e0112;
+      --brand-dark: #4a000b;
+      --brand-soft: #f6e9ec;
+      --ink: #191416;
+      --muted: #695f62;
+      --line: #eadde0;
+      --paper: #ffffff;
+      --cream: #fbf8f5;
+      --shadow: 0 18px 50px rgba(64, 0, 15, 0.11);
+      --radius: 22px;
+      --max: 1180px;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 10% 0%, rgba(110,1,18,0.10), transparent 28%),
+        radial-gradient(circle at 88% 8%, rgba(110,1,18,0.08), transparent 24%),
+        linear-gradient(180deg, #fff 0%, var(--cream) 45%, #fff 100%);
+      line-height: 1.55;
+    }
+    a { color: inherit; text-decoration: none; }
+    .top-strip { background: var(--brand); color: #fff; font-size: 13px; letter-spacing: 0.06em; text-transform: uppercase; text-align: center; padding: 9px 16px; font-weight: 750; }
+    header { position: sticky; top: 0; z-index: 100; background: rgba(255,255,255,0.91); backdrop-filter: blur(18px); border-bottom: 1px solid var(--line); }
+    .nav-wrap { max-width: var(--max); margin: 0 auto; padding: 16px 22px; display: flex; align-items: center; justify-content: space-between; gap: 18px; }
+    .brand-mark { display: flex; align-items: center; gap: 12px; min-width: 235px; }
+    .logo-dot { width: 42px; height: 42px; border-radius: 50%; background: linear-gradient(135deg, var(--brand), var(--brand-dark)); color: #fff; display: grid; place-items: center; font-weight: 900; box-shadow: 0 12px 26px rgba(110,1,18,0.24); }
+    .brand-name { font-weight: 900; letter-spacing: -0.03em; line-height: 1.05; }
+    .brand-name span { color: var(--brand); display: block; font-size: 12px; letter-spacing: 0.13em; text-transform: uppercase; margin-top: 3px; }
+    nav { display: flex; align-items: center; justify-content: flex-end; flex-wrap: wrap; gap: 8px; }
+    nav a { font-size: 13px; font-weight: 800; color: #3d3034; padding: 9px 11px; border-radius: 999px; transition: 0.2s ease; }
+    nav a:hover { background: var(--brand-soft); color: var(--brand); }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 22px; }
+    .hero { padding: 74px 0 48px; }
+    .hero-grid { display: grid; grid-template-columns: 1.12fr 0.88fr; gap: 32px; align-items: stretch; }
+    .eyebrow { color: var(--brand); font-weight: 900; letter-spacing: 0.16em; text-transform: uppercase; font-size: 12px; margin-bottom: 18px; }
+    h1 { font-size: clamp(42px, 7vw, 78px); line-height: 0.93; letter-spacing: -0.075em; margin: 0 0 22px; color: var(--brand); max-width: 850px; }
+    h2 { font-size: clamp(30px, 4vw, 48px); line-height: 1.03; letter-spacing: -0.055em; margin: 0 0 14px; }
+    h3 { font-size: 22px; line-height: 1.15; letter-spacing: -0.03em; margin: 0 0 10px; }
+    p { margin: 0; color: var(--muted); }
+    .lead { font-size: 20px; max-width: 730px; color: #43383b; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 13px 18px; border-radius: 999px; font-weight: 900; border: 1px solid transparent; cursor: pointer; transition: 0.2s ease; }
+    .btn.primary { background: var(--brand); color: #fff; box-shadow: 0 16px 28px rgba(110,1,18,0.22); }
+    .btn.primary:hover { transform: translateY(-1px); background: var(--brand-dark); }
+    .btn.secondary { background: #fff; color: var(--brand); border-color: rgba(110,1,18,0.22); }
+    .btn.secondary:hover { background: var(--brand-soft); }
+    .hero-card { background: linear-gradient(180deg, var(--brand) 0%, #4e000d 100%); color: #fff; border-radius: 34px; padding: 28px; box-shadow: var(--shadow); position: relative; overflow: hidden; min-height: 430px; }
+    .hero-card:before { content: ""; position: absolute; inset: -80px -80px auto auto; width: 260px; height: 260px; border-radius: 50%; background: rgba(255,255,255,0.10); }
+    .hero-card:after { content: ""; position: absolute; inset: auto auto -90px -70px; width: 250px; height: 250px; border-radius: 50%; background: rgba(255,255,255,0.08); }
+    .hero-card-content { position: relative; z-index: 1; height: 100%; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; }
+    .photo-frame { border: 1px solid rgba(255,255,255,0.24); border-radius: 28px; min-height: 220px; background: linear-gradient(135deg, rgba(255,255,255,0.15), rgba(255,255,255,0.03)), repeating-linear-gradient(135deg, rgba(255,255,255,0.08) 0 1px, transparent 1px 18px); display: grid; place-items: center; text-align: center; padding: 24px; }
+    .photo-frame strong { font-size: 24px; letter-spacing: -0.04em; display: block; }
+    .photo-frame span { display: block; color: rgba(255,255,255,0.72); margin-top: 8px; font-size: 14px; }
+    .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+    .stat { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.15); border-radius: 18px; padding: 14px; }
+    .stat b { display: block; font-size: 20px; color: #fff; line-height: 1; }
+    .stat span { display: block; margin-top: 5px; font-size: 12px; color: rgba(255,255,255,0.75); line-height: 1.25; }
+    section { scroll-margin-top: 112px; padding: 58px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 24px; }
+    .section-head p { max-width: 560px; font-size: 16px; }
+    .panel { background: rgba(255,255,255,0.78); border: 1px solid var(--line); border-radius: var(--radius); box-shadow: 0 12px 34px rgba(33, 20, 24, 0.06); padding: 26px; }
+    .maroon-panel { background: var(--brand); color: #fff; border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .maroon-panel p, .maroon-panel li { color: rgba(255,255,255,0.84); }
+    .maroon-panel h3 { color: #fff; }
+    .grid-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
+    .grid-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+    .service-card { padding: 24px; border-radius: 24px; background: #fff; border: 1px solid var(--line); box-shadow: 0 10px 26px rgba(46, 28, 34, 0.06); position: relative; overflow: hidden; }
+    .service-card:before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: var(--brand); }
+    .service-card .icon { width: 44px; height: 44px; border-radius: 16px; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); font-size: 21px; margin-bottom: 15px; }
+    .tag { display: inline-flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-size: 12px; font-weight: 900; margin-top: 14px; }
+    .copy-block { background: #fff; border: 1px solid var(--line); border-radius: 24px; overflow: hidden; margin-bottom: 16px; }
+    .copy-title { background: var(--brand); color: #fff; padding: 13px 18px; font-weight: 900; }
+    .copy-content { padding: 20px; }
+    .copy-content h3 { color: var(--brand); }
+    .flow { display: grid; grid-template-columns: repeat(7, minmax(110px, 1fr)); gap: 10px; align-items: stretch; overflow-x: auto; padding-bottom: 8px; }
+    .flow-step { min-width: 130px; border-radius: 18px; background: #fff; border: 1px solid var(--line); padding: 16px; position: relative; box-shadow: 0 8px 18px rgba(39, 20, 25, 0.05); }
+    .flow-step:not(:last-child):after { content: "→"; position: absolute; right: -12px; top: 50%; transform: translateY(-50%); color: var(--brand); font-weight: 900; z-index: 2; background: #fff; border-radius: 50%; padding: 1px 4px; }
+    .flow-step b { color: var(--brand); display: block; margin-bottom: 6px; }
+    .pipeline { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; }
+    .stage { background: #fff; border: 1px solid var(--line); border-radius: 18px; padding: 15px; min-height: 96px; }
+    .stage span { display: inline-grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 900; font-size: 13px; margin-bottom: 10px; }
+    .stage b { display: block; line-height: 1.15; }
+    .check-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+    .check-list li { position: relative; padding-left: 30px; color: var(--muted); }
+    .check-list li:before { content: "✓"; position: absolute; left: 0; top: 1px; width: 20px; height: 20px; border-radius: 50%; display: grid; place-items: center; background: var(--brand); color: #fff; font-size: 12px; font-weight: 900; }
+    .links-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+    .link-card { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 18px; min-height: 126px; display: flex; flex-direction: column; justify-content: space-between; transition: 0.2s ease; }
+    .link-card:hover { transform: translateY(-2px); box-shadow: 0 16px 32px rgba(56, 22, 29, 0.08); border-color: rgba(110,1,18,0.28); }
+    .link-card b { color: var(--brand); display: block; margin-bottom: 6px; }
+    .link-card span { color: var(--muted); font-size: 13px; }
+    .placeholder { margin-top: 13px; font-size: 12px; font-weight: 900; color: var(--brand); letter-spacing: 0.04em; text-transform: uppercase; }
+    .timeline { border-left: 3px solid var(--brand); padding-left: 22px; display: grid; gap: 18px; }
+    .timeline-item { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 18px; position: relative; }
+    .timeline-item:before { content: ""; position: absolute; left: -33px; top: 21px; width: 17px; height: 17px; border-radius: 50%; background: var(--brand); border: 4px solid #fff; box-shadow: 0 0 0 1px var(--line); }
+    .note { background: var(--brand-soft); border: 1px solid rgba(110,1,18,0.18); border-radius: 20px; padding: 18px; color: #442a30; }
+    footer { padding: 42px 0 58px; background: var(--brand); color: #fff; margin-top: 44px; }
+    footer p { color: rgba(255,255,255,0.78); }
+    .footer-grid { display: flex; align-items: center; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .print-btn { border: 1px solid rgba(255,255,255,0.28); background: rgba(255,255,255,0.08); color: #fff; }
+    .print-btn:hover { background: rgba(255,255,255,0.14); }
+    @media (max-width: 980px) { .hero-grid, .grid-2, .grid-3 { grid-template-columns: 1fr; } .pipeline { grid-template-columns: repeat(2, minmax(0, 1fr)); } .links-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } .section-head { align-items: flex-start; flex-direction: column; } nav { justify-content: flex-start; } .nav-wrap { align-items: flex-start; flex-direction: column; } }
+    @media (max-width: 620px) { .top-strip { font-size: 11px; } .hero { padding-top: 44px; } h1 { font-size: 44px; } .lead { font-size: 17px; } .panel, .maroon-panel { padding: 20px; } .pipeline, .links-grid { grid-template-columns: 1fr; } .stat-row { grid-template-columns: 1fr; } nav a { padding: 8px 9px; font-size: 12px; } }
+    @media print { header, .top-strip, .hero-actions, footer { display: none; } body { background: #fff; } section { page-break-inside: avoid; padding: 24px 0; } .panel, .service-card, .copy-block, .stage, .link-card { box-shadow: none; } }
+  </style>
+</head>
+<body>
+  <div class="top-strip">Client Handoff Dashboard • Funnel Strategy • Website Direction • GHL Workflow</div>
+  <header>
+    <div class="nav-wrap">
+      <a class="brand-mark" href="#top" aria-label="Right Time Studio home">
+        <div class="logo-dot">RTS</div><div class="brand-name">Right Time Studio<span>Strategy Dashboard</span></div>
+      </a>
+      <nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#landing-page">Landing Page</a><a href="#funnel">Funnel</a><a href="#ghl">GHL</a><a href="#automation">Automation</a><a href="#retainer">Retainer</a><a href="#assets">Assets</a><a href="#next-steps">Next Steps</a></nav>
+    </div>
+  </header>
+  <main id="top">
+    <div class="container hero"><div class="hero-grid"><div><div class="eyebrow">Right Time Studio</div><h1>Funnel & Website Strategy</h1><p class="lead">A clean, client-facing roadmap for turning Right Time Studio’s creative services into a focused lead capture, consultation, booking, and retainer opportunity system.</p><div class="hero-actions"><a class="btn primary" href="#landing-page">Review Landing Page Copy</a><a class="btn secondary" href="#funnel">View Funnel Map</a></div></div><aside class="hero-card"><div class="hero-card-content"><div class="photo-frame"><div><strong>Professional creative studio positioning</strong><span>Photography • Videography • Headshots • Events • Studio Sessions • Monthly Content</span></div></div><div class="stat-row"><div class="stat"><b>01</b><span>One page strategy dashboard</span></div><div class="stat"><b>02</b><span>Lead flow into GoHighLevel</span></div><div class="stat"><b>03</b><span>Path toward recurring revenue</span></div></div></div></aside></div></div>
+    <section id="overview"><div class="container"><div class="section-head"><div><div class="eyebrow">Executive Summary</div><h2>What this page is designed to clarify</h2></div><p>This dashboard keeps the handoff simple: one page, top menu navigation, clear recommendations, and placeholders for all supporting links.</p></div><div class="grid-3"><div class="panel"><h3>Primary Business Goal</h3><p>Capture qualified leads, book more consultations, and move interested prospects into the right creative service or monthly content support offer.</p></div><div class="panel"><h3>Recommended CTA</h3><p><strong style="color: var(--brand);">Book a Consultation</strong> is the best primary CTA because project scope can vary across photography, video, events, studio use, and retainers.</p></div><div class="panel"><h3>Positioning Direction</h3><p>Right Time Studio should be positioned as a visual content partner for professionals, entrepreneurs, brands, and organizations.</p></div></div></div></section>
+    <section id="landing-page"><div class="container"><div class="section-head"><div><div class="eyebrow">Website Copy Draft</div><h2>Landing page structure and copy</h2></div><p>This copy can be reviewed, edited, and later placed into GoHighLevel, Lovable, or any website builder.</p></div><div class="copy-block"><div class="copy-title">Hero Section</div><div class="copy-content"><h3>Professional Photo & Video Content for Brands That Are Ready to Be Seen</h3><p>Right Time Studio helps entrepreneurs, professionals, businesses, and organizations create high-quality photography and videography that builds trust, tells your story, and strengthens your brand presence.</p><p style="margin-top: 14px;"><strong>Primary CTA:</strong> Book a Consultation &nbsp; • &nbsp; <strong>Secondary CTA:</strong> View Services</p><p style="margin-top: 10px;"><strong>Trust Line:</strong> Houston-based photography, videography, branding, headshots, events, and studio content support.</p></div></div><div class="grid-3"><article class="service-card"><div class="icon">📸</div><h3>Branding Photography</h3><p>Create a professional image library for your website, social media, marketing materials, and personal brand.</p><span class="tag">Best for entrepreneurs & brands</span></article><article class="service-card"><div class="icon">👤</div><h3>Professional Headshots</h3><p>Modern, polished headshots that help individuals, teams, executives, and organizations make the right first impression.</p><span class="tag">Best for professionals & teams</span></article><article class="service-card"><div class="icon">🎥</div><h3>Videography</h3><p>Bring your message, event, or brand story to life through high-quality video content designed to connect with your audience.</p><span class="tag">Best for brand storytelling</span></article><article class="service-card"><div class="icon">🎤</div><h3>Event Coverage</h3><p>Capture the moments, energy, and impact of corporate events, community events, launches, celebrations, and special gatherings.</p><span class="tag">Best for events & activations</span></article><article class="service-card"><div class="icon">🏢</div><h3>Studio Sessions</h3><p>Use Right Time Studio as a professional creative space for content creation, photography, video, interviews, and branded visuals.</p><span class="tag">Best for creators & businesses</span></article><article class="service-card"><div class="icon">🔁</div><h3>Monthly Content Support</h3><p>For brands that need to stay visible consistently, monthly content support helps create fresh professional visuals throughout the year.</p><span class="tag">Best for recurring visibility</span></article></div><div class="grid-2" style="margin-top: 18px;"><div class="panel"><h3>Your Brand Deserves More Than Random Content</h3><p>Whether you need updated headshots, a full brand session, event coverage, promotional video, or a consistent content partner, Right Time Studio helps you create visuals with purpose.</p></div><div class="maroon-panel"><h3>Not sure what you need yet?</h3><p>Start with a consultation. The conversation can clarify the project goal, timeline, creative direction, and the best service path.</p><a class="btn secondary" href="#assets" style="margin-top: 18px;">Add Booking Link Placeholder</a></div></div></div></section>
+    <section id="funnel"><div class="container"><div class="section-head"><div><div class="eyebrow">Lead Flow</div><h2>Recommended funnel map</h2></div><p>The funnel should stay simple enough to explain quickly while still showing how Right Time Studio can move leads toward booked services and retainers.</p></div><div class="panel"><div class="flow" aria-label="Funnel flow"><div class="flow-step"><b>Traffic</b><p>Website, Instagram, LinkedIn, referrals, events, and direct outreach.</p></div><div class="flow-step"><b>Landing Page</b><p>One professional page presenting all services clearly.</p></div><div class="flow-step"><b>Consultation Form</b><p>Lead selects service interest and project details.</p></div><div class="flow-step"><b>Calendar Booking</b><p>Qualified lead books a consultation call.</p></div><div class="flow-step"><b>GHL Pipeline</b><p>Lead is tracked through consultation and quote stages.</p></div><div class="flow-step"><b>Proposal</b><p>Rashid recommends the right package or next step.</p></div><div class="flow-step"><b>Booked / Retainer</b><p>Lead becomes a session, project, or recurring client.</p></div></div></div></div></section>
+    <section id="ghl"><div class="container"><div class="section-head"><div><div class="eyebrow">GoHighLevel CRM</div><h2>Suggested pipeline stages</h2></div><p>These stages are simple enough for the team to manage while still giving visibility into new leads, consultations, proposals, bookings, and future retainers.</p></div><div class="pipeline"><div class="stage"><span>1</span><b>New Lead</b><p>Form submitted or inquiry received.</p></div><div class="stage"><span>2</span><b>Consultation Requested</b><p>Lead expressed interest.</p></div><div class="stage"><span>3</span><b>Consultation Booked</b><p>Call or meeting is scheduled.</p></div><div class="stage"><span>4</span><b>Consultation Completed</b><p>Needs are clarified.</p></div><div class="stage"><span>5</span><b>Quote / Proposal Sent</b><p>Package or next step shared.</p></div><div class="stage"><span>6</span><b>Session Booked</b><p>Project is confirmed.</p></div><div class="stage"><span>7</span><b>Project Completed</b><p>Assets delivered.</p></div><div class="stage"><span>8</span><b>Retainer Opportunity</b><p>Monthly support is discussed.</p></div><div class="stage"><span>9</span><b>Won</b><p>Client has purchased.</p></div><div class="stage"><span>10</span><b>Lost / Not Now</b><p>Lead can enter nurture.</p></div></div><div class="note" style="margin-top: 18px;"><strong>Recommended form fields:</strong> Name, email, phone, business or organization, service interest, desired timeline, project description, budget range, and consultation preference.</div></div></section>
+    <section id="automation"><div class="container"><div class="section-head"><div><div class="eyebrow">Follow-Up System</div><h2>Simple automation plan</h2></div><p>The goal is not to over-automate. The goal is to make sure no serious inquiry gets missed and every lead receives a professional response.</p></div><div class="grid-3"><div class="panel"><h3>1. Lead Confirmation</h3><p>Send instant email/SMS confirming the inquiry was received and inviting them to book or watch for next steps.</p></div><div class="panel"><h3>2. Internal Notification</h3><p>Notify Rashid or the team when a new lead comes in, including service interest and project details.</p></div><div class="panel"><h3>3. Booking Reminder</h3><p>Send reminders before consultation calls to reduce no-shows.</p></div><div class="panel"><h3>4. No-Booking Follow-Up</h3><p>If someone submits a form but does not schedule, send a short reminder sequence.</p></div><div class="panel"><h3>5. Post-Session Follow-Up</h3><p>After project completion, send thank-you message, review request, and optional next-step offer.</p></div><div class="panel"><h3>6. Retainer Invitation</h3><p>Invite strong-fit clients into monthly content support once they have experienced the service.</p></div></div></div></section>
+    <section id="retainer"><div class="container"><div class="section-head"><div><div class="eyebrow">Recurring Revenue Opportunity</div><h2>Monthly content partnership</h2></div><p>This is the strongest long-term opportunity because it moves Right Time Studio beyond one-time creative projects.</p></div><div class="grid-2"><div class="maroon-panel"><h3>Need content every month? Let’s build a plan.</h3><p>For brands that need to stay visible, one photo session is not always enough. Right Time Studio can support ongoing content creation so clients have fresh, professional visuals for marketing, social media, websites, events, and campaigns.</p></div><div class="panel"><h3>Best-fit retainer clients</h3><ul class="check-list"><li>Businesses that post regularly</li><li>Personal brands and public-facing professionals</li><li>Organizations with frequent events or campaigns</li><li>Coaches, consultants, speakers, and creators</li><li>Teams needing ongoing headshots, reels, interviews, or promotional content</li></ul></div></div></div></section>
+    <section id="assets"><div class="container"><div class="section-head"><div><div class="eyebrow">Resource Hub</div><h2>Assets and links</h2></div><p>Replace each placeholder with the final link. This lets Rashid review everything from one page instead of digging through folders.</p></div><div class="links-grid"><a class="link-card" href="https://www.capturedbyrts.com/" target="_blank" rel="noopener"><div><b>Current Website</b><span>Reference for existing services and brand presence.</span></div><div class="placeholder">Open Link</div></a><a class="link-card" href="https://www.instagram.com/righttimesolutions/" target="_blank" rel="noopener"><div><b>Instagram</b><span>Social proof, visuals, and creative examples.</span></div><div class="placeholder">Open Link</div></a><a class="link-card" href="https://www.linkedin.com/in/rashid-tillis-6408b816/" target="_blank" rel="noopener"><div><b>LinkedIn</b><span>Professional profile and positioning reference.</span></div><div class="placeholder">Open Link</div></a><a class="link-card" href="#replace-lovable-link"><div><b>Lovable Page</b><span>Placeholder for the page build or prototype link.</span></div><div class="placeholder">Replace Link</div></a><a class="link-card" href="#replace-google-drive-link"><div><b>Google Drive Folder</b><span>Back-end storage for supporting files and assets.</span></div><div class="placeholder">Replace Link</div></a><a class="link-card" href="#replace-video-link"><div><b>Explainer Video</b><span>Placeholder for the recorded walkthrough link.</span></div><div class="placeholder">Replace Link</div></a><a class="link-card" href="#replace-notion-link"><div><b>Notion Page</b><span>Placeholder for any existing Notion documentation.</span></div><div class="placeholder">Replace Link</div></a><a class="link-card" href="#replace-booking-link"><div><b>Booking Calendar</b><span>Placeholder for the consultation booking page.</span></div><div class="placeholder">Replace Link</div></a></div></div></section>
+    <section id="next-steps"><div class="container"><div class="section-head"><div><div class="eyebrow">Recommended Handoff</div><h2>Next steps for review</h2></div><p>This sequence keeps the presentation simple and gives Rashid a clear path without overwhelming him with too many separate files.</p></div><div class="grid-2"><div class="panel"><h3>Presentation checklist</h3><ul class="check-list"><li>Review the overall positioning and service structure.</li><li>Confirm the primary CTA: Book a Consultation.</li><li>Replace placeholder links in the Assets section.</li><li>Confirm the GHL pipeline stages.</li><li>Record a short walkthrough explaining the page and funnel.</li><li>Decide whether the landing page will be built in GHL, Lovable, or another builder.</li></ul></div><div class="panel"><h3>Explainer video talking points</h3><div class="timeline"><div class="timeline-item"><b>Start with the purpose.</b><p>This dashboard shows how Right Time Studio can capture leads, book consultations, and create a path toward recurring content opportunities.</p></div><div class="timeline-item"><b>Walk through the landing page.</b><p>Explain how the copy presents all services while keeping one clear CTA.</p></div><div class="timeline-item"><b>Show the funnel map.</b><p>Explain how traffic becomes a lead, a consultation, a proposal, and a booking.</p></div><div class="timeline-item"><b>Explain GHL.</b><p>Describe the pipeline, follow-up automations, and retainer opportunity.</p></div><div class="timeline-item"><b>Close with next steps.</b><p>Invite Rashid to review, confirm links, and decide what to build first.</p></div></div></div></div></div></section>
+  </main>
+  <footer><div class="container footer-grid"><div><h3 style="margin-bottom: 6px;">Right Time Studio Funnel & Website Strategy</h3><p>Prepared as a simple client-facing strategy dashboard for review and presentation.</p></div><button class="btn print-btn" onclick="window.print()">Print / Save as PDF</button></div></footer>
+</body>
+</html>
